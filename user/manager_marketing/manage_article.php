@@ -73,6 +73,7 @@ include "../../config.php";
                                     <th>Topic</th>
                                     <th>Amount Of File</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -85,6 +86,15 @@ include "../../config.php";
                                     <td>Nguyen Van A</td>
                                     <td>2</td>
                                     <td><span class="badge badge-warning">Processing</span></td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a href="" class="btn btn-success"
+                                               role="button" ><i class="fe fe-download"></i></a>
+                                            <a href="" class="btn btn-info"
+                                               role="button" ><i class="mdi mdi-dots-horizontal"></i></a>
+
+                                        </div>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -89,7 +89,7 @@
                                 </span>
                             </span>
                             <span class="menu-icon">
-                                <i class="icon-placeholder fe fe-activity "></i>
+                                <i class="icon-placeholder fe fe-home "></i>
                             </span>
                         </a>
                     </li>
@@ -114,7 +114,7 @@
                                 </span>
                             </span>
                             <span class="menu-icon">
-                                <i class="icon-placeholder fe fe-activity "></i>
+                                <i class="icon-placeholder fe fe-home "></i>
                             </span>
                         </a>
                     </li>
@@ -138,7 +138,7 @@
                                 </span>
                             </span>
                             <span class="menu-icon">
-                                <i class="icon-placeholder fe fe-activity "></i>
+                                <i class="icon-placeholder fe fe-home "></i>
                             </span>
                         </a>
                         <a href="#" class="menu-link">
