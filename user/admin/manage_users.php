@@ -49,6 +49,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                         <th>Username</th>
                                         <th>Fullname</th>
                                         <th>Email</th>
+                                        <th>Role</th>
                                         <th>Status</th>
                                         <th>Manage</th>
                                     </tr>
@@ -64,6 +65,7 @@ $date2 = strtotime("2018-09-21 10:44:01");
                                             <td><?php echo $row["username"]; ?></td>
                                             <td><?php echo $row["fullname"]; ?></td>
                                             <td><?php echo $row["email"]; ?></td>
+                                            <td><?php echo $row["role"]; ?></td>
                                             <td>
                                                 <?php
                                                 if($row["status"] == 1){ ?>
