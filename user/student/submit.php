@@ -124,6 +124,14 @@ if (isset($_POST['uploadFile'])) {
 <html lang="en">
 <head>
     <?php include "../partials/html_header.php"; ?>
+    <style>
+        label.error {
+            margin-top: 10px;
+            color: red;
+            z-index: 9;
+            order: 4;
+        }
+    </style>
 </head>
 
 <body class="sidebar-pinned ">
@@ -319,7 +327,7 @@ if (isset($_POST['uploadFile'])) {
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form method="post" enctype="multipart/form-data">
+                                <form method="post" id="upload-file" enctype="multipart/form-data">
                                     <div class="modal-body">
                                         <div class="card-header">
                                             <p class="m-b-0 text-muted">
@@ -327,7 +335,7 @@ if (isset($_POST['uploadFile'])) {
                                                 article.
                                             </p>
                                         </div>
-                                        <form action="" method="post" enctype="multipart/form-data">
+                                        <form action="" method="post"  enctype="multipart/form-data">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="inputName">Name of article</label>
@@ -347,7 +355,7 @@ if (isset($_POST['uploadFile'])) {
                                                         <div>
                                                             <p class=" font-secondary">File Uploads</p>
                                                             <div class="input-group mb-3">
-                                                                <div class="custom-file" onload="GetFileInfo ()">
+                                                                <div onload="GetFileInfo ()">
                                                                     <input type="file" class="custom-file-input"
                                                                            id="inputFile" name="inputFileArticle[]"
                                                                            multiple onchange="GetFileInfo ()">
@@ -360,12 +368,13 @@ if (isset($_POST['uploadFile'])) {
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="form-check">
+                                                            <label class="form-check-label" for="gridCheck">
                                                             <input class="form-check-input" type="checkbox"
                                                                    id="gridCheck" name="agree">
-                                                            <label class="form-check-label" for="gridCheck">
                                                                 I agree to the Terms and Conditions
                                                             </label>
                                                         </div>
+                                                        <label for="agree" class="error"></label>
                                                     </div>
                                                     <div class="form-group  float-right">
                                                         <input type="submit" name="uploadFile" class="btn btn-primary"
@@ -384,12 +393,10 @@ if (isset($_POST['uploadFile'])) {
                             </div>
                         </div>
                     </div>
-
                     <?php
                 }
                 ?>
             </div>
-
     </section>
 </main>
 
@@ -461,6 +468,37 @@ if (isset($_POST['uploadFile'])) {
 <script src='https://d33wubrfki0l68.cloudfront.net/js/c36248babf70a3c7ad1dcd98d4250fa60842eea9/light/assets/vendor/apexchart/apexcharts.min.js'></script>
 <!--chart data for current dashboard-->
 <script src='https://d33wubrfki0l68.cloudfront.net/js/d678dabfdc5c3131d492af7ef517fbe46fbbd8e4/light/assets/js/dashboard-01.js'></script>
+<script src="../../assets/vendor/jquery.validate/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#upload-file").validate({
+            rules: {
+                nameArticle: {
+                    required: true,
+                    minlength: 3,
+                },
+                'inputFileArticle[]': {
+                    required: true,
+                },
+                agree: {
+                    required: true,
+                },
+            },
+            messages: {
+                nameArticle: {
+                    required: "Please provide information.",
+                    minlength: "Please provide information.",
+                },
+                'inputFileArticle[]': {
+                    required: "Please provide information.",
+                },
+                agree: {
+                    required: "Please agree Terms before submit."
+                }
+            },
+        })
+    });
+</script>
 
 </body>
 

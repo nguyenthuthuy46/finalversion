@@ -50,7 +50,7 @@ $userId = $_SESSION["current_user"]["u_id"];
                             <div class="form-group">
                                 <label for="inputNewPass2">Confirm New Password</label>
                                 <input type="text" class="form-control" id="inputNewPass2" name="confirmPassword"
-                                       placeholder="Comfirm new password." required>
+                                       placeholder="Confirm new password." required>
                             </div>
                             <div class="alert alert-success" id="success" style="margin-top: 10px; display: none">
                                 <strong>Success!</strong> Change password success!
@@ -108,9 +108,8 @@ $userId = $_SESSION["current_user"]["u_id"];
                     },
                     confirmPassword: {
                         required: true,
-                        equalTo: "#newPassword",
+                        equalTo: "#inputNewPass1",
                     }
-
                 },
                 messages: {
                     oldPassword: {
